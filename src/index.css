@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.counter h3 {
+  margin: 10px;
+}

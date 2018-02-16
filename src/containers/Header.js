@@ -27,9 +27,9 @@ class Header extends Component {
 
   signIn = () => {
     const auth = firebase.auth();
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
 
-    auth.signInWithPopup(googleProvider)
+    auth.signInWithPopup(provider)
       .then(result => {
         const name = result.user.displayName;
         const email = result.user.email;

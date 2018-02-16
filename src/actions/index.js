@@ -10,6 +10,16 @@
 //   }
 // }
 
+export const storeUser = (name, email) => ({
+  type: 'STORE_USER',
+  name,
+  email
+})
+
+export const removeUser = () => ({
+  type: 'REMOVE_USER'
+})
+
 export const increaseCounter = (counter) => {
   return {
     type: 'INCREASE_COUNTER',

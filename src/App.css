@@ -2,21 +2,24 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-title {
-  font-family: 'Montserrat', sans-serif;
+.app-title {
   font-size: 5em;
+}
+
+.account-status {
+  cursor: pointer;
+  font-size: 2em;
 }
 
 .tag-line {

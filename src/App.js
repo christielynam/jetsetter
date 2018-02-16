@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
+import Header from './containers/Header';
 import Counter from './containers/Counter';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Jetsetter</h1>
-        </header>
-        <p className='tag-line'>The ultimate app for the travel enthusiast</p>
-        <Counter />
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="App">
+      <Route path='/' component={Header} />
+      <p className='tag-line'>The ultimate app for the travel enthusiast</p>
+      <Route path='/' component={Counter} />
+    </div>
+  )
 }
 
 export default App;

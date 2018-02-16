@@ -22,6 +22,10 @@
   font-size: 2em;
 }
 
+.account-status:hover {
+  color: #abc123;
+}
+
 .tag-line {
   font-family: 'Raleway', sans-serif;
   font-size: 3em;

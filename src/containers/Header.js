@@ -25,25 +25,30 @@ class Header extends Component {
     })
   }
 
-  signInSignOut = () => {
+  signIn = () => {
     const auth = firebase.auth();
-    const user = firebase.auth().currentUser;
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-    if (user) {
-      auth.signOut();
-      this.props.removeUser();
-      this.setState({ accountStatus: 'Sign in with Google' });
-    } else {
-      auth.signInWithPopup(googleProvider)
-        .then((result) => {
-          const name = result.user.displayName;
-          const email = result.user.email;
-          this.props.storeUser(name, email);
-          this.setState({ accountStatus: 'LOG OUT' });
-        })
-        .catch((error) => console.log({ error }));
-    }
+    auth.signInWithPopup(googleProvider)
+      .then(result => {
+        const name = result.user.displayName;
+        const email = result.user.email;
+        this.props.storeUser(name, email);
+        this.setState({ accountStatus: 'LOG OUT' });
+      })
+      .catch(error => console.log({ error }));
+  }
+
+  signOut = () => {
+    const auth = firebase.auth();
+    auth.signOut();
+    this.props.removeUser();
+    this.setState({ accountStatus: 'Sign in with Google' });
+  }
+
+  toggleAccountStatus = () => {
+    const user = firebase.auth().currentUser;
+    user ? this.signOut() : this.signIn()
   }
 
   render() {
@@ -53,7 +58,7 @@ class Header extends Component {
         <h1 className='app-title'>Jetsetter</h1>
         <p
           className='account-status'
-          onClick={this.signInSignOut}>
+          onClick={this.toggleAccountStatus}>
           {accountStatus}
         </p>
       </header>

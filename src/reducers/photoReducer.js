@@ -6,3 +6,21 @@ export const photo = (state = '', action) => {
       return state
   }
 }
+
+export const photoIsLoading = (state = false, action) => {
+  switch (action.type) {
+    case 'PHOTO_IS_LOADING':
+      return action.photoIsLoading
+    default:
+      return state
+  }
+}
+
+export const photoError = (state = false, action) => {
+  switch (action.type) {
+    case 'PHOTO_ERROR':
+      return action.photoError
+    default:
+      return state
+  }
+}

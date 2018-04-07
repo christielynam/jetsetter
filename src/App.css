@@ -8,6 +8,10 @@
 .photo-container {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,15 +19,6 @@
 
 .App {
   text-align: center;
-}
-
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 150px;
-  padding: 20px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .app-title {
@@ -43,6 +38,16 @@
 .tag-line {
   font-family: 'Raleway', sans-serif;
   font-size: 3em;
+}
+
+.app-header {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.title-container {
+
 }
 
 @keyframes App-logo-spin {

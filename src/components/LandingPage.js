@@ -21,8 +21,10 @@ class LandingPage extends Component {
         style={{ backgroundImage: `url(${photo})` }}
       >
         <Header />
-        <h1 className='app-title'>Jetsetter</h1>
-        <p className='tag-line'>The ultimate app for the travel enthusiast</p>
+        <div className='title-'>
+          <h1 className='app-title'>Jetsetter</h1>
+          <p className='tag-line'>The ultimate app for the travel enthusiast</p>
+        </div>
       </div>
     )
   }

@@ -1,25 +1,19 @@
 import { accessKey } from '../utils/keys.js';
 
-export const photoIsLoading = (bool) => {
-  return {
-    type: 'PHOTO_IS_LOADING',
-    photoIsLoading: bool
-  }
-}
+export const photoIsLoading = (bool) => ({
+  type: 'PHOTO_IS_LOADING',
+  photoIsLoading: bool
+})
 
-export const photoError = (bool) => {
-  return {
-    type: 'PHOTO_ERROR',
-    photoError: bool
-  }
-}
+export const photoError = (bool) => ({
+  type: 'PHOTO_ERROR',
+  photoError: bool
+})
 
-export const fetchPhotoSuccess = (photo) => {
-  return {
-    type: 'FETCH_PHOTO_SUCCESS',
-    photo
-  }
-}
+export const fetchPhotoSuccess = (photo) => ({
+  type: 'FETCH_PHOTO_SUCCESS',
+  photo
+})
 
 export const storeUser = (name, email) => ({
   type: 'STORE_USER',
@@ -32,9 +26,10 @@ export const removeUser = () => ({
 })
 
 export const fetchPhoto = () => {
+  const url = 'https://api.unsplash.com/'
   return (dispatch) => {
     dispatch(photoIsLoading(true));
-    fetch(`https://api.unsplash.com/photos/random?query=momentum&client_id=${accessKey}`)
+    fetch(`${url}/photos/random?query=momentum&client_id=${accessKey}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)

@@ -4,24 +4,21 @@ import { connect } from 'react-redux';
 import { fetchPhoto } from '../actions';
 
 class LandingPage extends Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
-
+    
   componentDidMount() {
     this.props.fetchPhoto();
   }
 
   render() {
     const { photo } = this.props;
+
     return (
       <div
         className='photo-container'
         style={{ backgroundImage: `url(${photo})` }}
       >
         <Header />
-        <div className='title-'>
+        <div className='title-container'>
           <h1 className='app-title'>Jetsetter</h1>
           <p className='tag-line'>The ultimate app for the travel enthusiast</p>
         </div>
@@ -30,16 +27,14 @@ class LandingPage extends Component {
   }
 }
 
-const mapStateToProps = ({ photo }) => {
-  return {
-    photo,
-  }
-}
+const mapStateToProps = ({ photo, photoIsLoading, photoError }) => ({
+  photo,
+  photoIsLoading,
+  photoError
+})
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPhoto: () => dispatch(fetchPhoto()),
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  fetchPhoto: () => dispatch(fetchPhoto())
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

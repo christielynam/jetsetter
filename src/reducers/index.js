@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import { user } from './user';
-import { photo, photoError, photoIsLoading } from './photoReducer';
+import { photoIsLoading, photoError, photo } from './photo';
 
 
 const rootReducer = combineReducers({
   user,
-  photo,
+  photoIsLoading,
   photoError,
-  photoIsLoading
+  photo
 })
 
 export default rootReducer;

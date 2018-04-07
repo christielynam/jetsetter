@@ -31,24 +31,9 @@ export const removeUser = () => ({
   type: 'REMOVE_USER'
 })
 
-export const increaseCounter = (counter) => {
-  return {
-    type: 'INCREASE_COUNTER',
-    counter
-  }
-}
-
-export const decreaseCounter = (counter) => {
-  return {
-    type: 'DECREASE_COUNTER',
-    counter
-  }
-}
-
 export const fetchPhoto = () => {
   return (dispatch) => {
     dispatch(photoIsLoading(true));
-
     fetch(`https://api.unsplash.com/photos/random?query=momentum&client_id=${accessKey}`)
       .then(response => {
         if (!response.ok) {

@@ -54,8 +54,7 @@ class Header extends Component {
   render() {
     const { accountStatus } = this.state
     return (
-      <header className='app-header'>
-        <h1 className='app-title'>Jetsetter</h1>
+      <header className='app-header'>  
         <p
           className='account-status'
           onClick={this.toggleAccountStatus}>

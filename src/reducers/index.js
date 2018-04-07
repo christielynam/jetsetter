@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { counter } from './counter';
 import { user } from './user';
+import { photo } from './photoReducer';
 
 const rootReducer = combineReducers({
   user,
-  counter
+  counter,
+  photo,
 })
 
 export default rootReducer;
